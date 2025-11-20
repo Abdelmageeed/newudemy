@@ -1,0 +1,537 @@
+/* App.css */
+* {
+  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  width: 100%;       /* Take up available width */
+  margin: 0;         /* Remove browser default gaps */
+  padding: 0;        /* Remove internal gaps */
+  overflow-x: hidden; /* Prevent accidental side-scrolling */
+}
+
+/* --- Navbar --- */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 30px;
+  height: 72px;
+  width: 100vw;
+}
+
+.elements {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+  font-size: 15px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.search-bar {
+  flex-grow: 1; /* Takes up available space */
+  margin: 0 10px;
+  border-radius: 27px;
+  border: none;
+}
+
+.search-bar input {
+  width: 100%;
+  height:50px;
+  padding: 10px;
+  border-radius: 27px;
+  border: 2px black solid;
+  background-color: #fff;
+  color:#000;
+}
+
+.nav-buttons button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background: white;
+  border: 1px solid black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-buttons .purple-btn {
+  background: #6d28d2;
+  color: white;
+  border:none;
+}
+
+.nav-buttons .white-btn {
+  background: white;
+  color: #6d28d2;
+  border-color: #6d28d2;
+}
+
+/* --- Hero Section (The Banner) --- */
+.hero {
+  position: relative; /* Allows us to put the text box on top */
+  height: 400px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 105px;
+  margin-bottom: 10px;
+  margin-left: 80px;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-card {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  background: white;
+  padding: 24px;
+  width: 450px;
+  height: 200px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+/* --- Course Section --- */
+.course-section {
+  padding: 40px;
+}
+
+.course-list {
+  display: flex;
+  gap: 20px;
+  /* This enables the horizontal scrolling you asked about! */
+  overflow-x: auto; 
+  padding-bottom: 20px;
+}
+
+.course-card {
+  min-width: 250px; /* Prevents squishing */
+  cursor: pointer;
+}
+
+.course-image {
+  width: 100%;
+  height: 140px;
+  background-color: #ddd;
+  margin-bottom: 10px;
+}
+
+/* --- 1. The Main Parent Container --- */
+.skills-container {
+  /* IMPORTANT: This turns the container into a horizontal row */
+  display: flex; 
+  align-items: center; /* Vertically centers the text with the cards */
+  gap: 40px; /* Space between the text block and the cards */
+  padding: 40px;
+  background-color: #fff;
+  margin-right: 55px;
+  margin-left: 50px;
+}
+
+/* --- 2. The Text Block (Left Side) --- */
+.text-content {
+  flex: 1; /* Takes up 1 "share" of the width */
+  max-width: 300px; /* Stops the text from getting too wide */
+}
+
+.text-content h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: #2d2f31;
+}
+
+/* --- 3. The Cards Wrapper (Right Side) --- */
+.cards-wrapper {
+  flex: 3;
+  display: flex; 
+  gap: 15px;
+}
+
+/* --- 4. Individual Card Styling --- */
+.skill-card {
+  position: relative; /* Needed so we can place the white box inside */
+  width: 100%;
+  height: 400px;
+  width: 310px;
+  border-radius: 16px; /* Rounded corners */
+  overflow: hidden; /* Hides image corners that poke out */
+  cursor: pointer;
+}
+
+.card-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The White Info Box inside the card */
+.white-box {
+  position: absolute; /* Float inside the card */
+  bottom: 16px;       /* 16px from bottom */
+  left: 16px;         /* 16px from left */
+  right: 16px;        /* 16px from right */
+  
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+
+/* --- Main Container (Dark Box) --- */
+.ai-container {
+  background-color: #202230; /* Dark Udemy Color */
+  color: white;
+  padding: 48px;
+  display: flex; /* Puts Left and Right side-by-side */
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1340px; /* Or whatever your page width is */
+  margin: 40px auto;
+  border-radius: 16px; /* The rounded corners of the big box */
+}
+
+/* --- Left Side Styling --- */
+.ai-content {
+  flex: 1; /* Takes up roughly 40-50% of space */
+  max-width: 500px;
+}
+
+.ai-content h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  line-height: 1.1;
+  font-family: serif; /* Udemy uses a serif font for headings sometimes */
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+/* The 2x2 Feature Grid */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates 2 equal columns */
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.icon {
+  background: rgba(255,255,255,0.1); /* Slight transparent bubble */
+  padding: 5px;
+  border-radius: 50%;
+}
+
+/* Button & Price */
+.white-button {
+  padding: 12px 24px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 13rem;
+}
+
+.cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.price-text {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+/* --- Right Side Styling (The Images) --- */
+.ai-images {
+  flex: 1;
+  display: flex; /* Creates the 3 columns of images */
+  gap: 16px;
+  height: 400px; /* Force a height so they align */
+}
+
+.img-col {
+  flex: 1; /* Each column takes equal width */
+  display: flex;
+  flex-direction: column;
+}
+
+.img-col img {
+  width: 100%;
+  border-radius: 16px; /* Rounded corners on images */
+  object-fit: cover;
+}
+
+.tall-img {
+  height: 100%; /* Fills the whole column */
+}
+
+.stack-col {
+  justify-content: space-between; /* Pushes top img up, bottom img down */
+}
+
+.short-img {
+  height: 48%; /* Each stacked image takes roughly half height */
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  .ai-container {
+    flex-direction: column; /* Stack vertical on mobile */
+    padding: 24px;
+  }
+
+  .img-col {
+     min-height: 300px; /* Give images height on mobile */
+  }
+}
+
+
+.transform-section {
+  padding: 40px;
+  max-width: 1340px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #2d2f31;
+}
+
+.section-header p {
+  color: #6a6f73;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+
+.tabs-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #6a6f73;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  color: black;
+}
+
+.tab-btn:hover {
+  color: black;
+}
+
+.courses-container {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+/* --- Individual Course Card --- */
+.course-card {
+  min-width: 280px; /* Force cards to be wide */
+  max-width: 280px;
+  cursor: pointer;
+}
+
+.card-image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border: 1px solid #d1d7dc;
+}
+
+.card-content {
+  padding-top: 8px;
+}
+
+.course-title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 4px;
+  
+  /* CSS Trick: Limits text to 2 lines and adds "..." */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.course-author {
+  font-size: 12px;
+  color: #6a6f73;
+  margin-bottom: 4px;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.rating-num { font-weight: bold; color: #b4690e; }
+.rating-count { color: #6a6f73; }
+
+.price-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.current-price { font-weight: bold; font-size: 16px; }
+.old-price { text-decoration: line-through; color: #6a6f73; font-size: 14px; }
+
+/* --- Badges --- */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.badge-yellow { background-color: #eceb98; color: #3d3c0a; }
+.badge-purple { background-color: #a435f0; color: white; }
+
+/* --- Next Arrow Button --- */
+.next-arrow-btn {
+  position: absolute;
+  right: -20px;
+  top: 30%;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.show-all-btn {
+  border: 1px solid black;
+  background: white;
+  padding: 10px 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.trusted-section {
+  background-color: #f6f7f9;
+  padding: 32px 24px; 
+  text-align: center;
+  border-bottom: 1px solid #d1d7dc;
+}
+
+/* The Heading Text */
+.trusted-heading {
+  color: #6a6f73; /* Muted dark grey text */
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 32px; /* Space between text and logos */
+  font-weight: normal;
+}
+
+/* The Row of Logos */
+.logos-container {
+  display: flex;
+  justify-content: space-between; /* Spreads them out evenly */
+  align-items: center; /* Lines them up vertically */
+  gap: 30px; /* Ensures they don't touch */
+  
+  max-width: 1200px; /* Stops them from spreading too wide on big screens */
+  margin: 0 auto; /* Centers the container */
+  flex-wrap: wrap; /* Allows wrapping on mobile screens */
+}
+
+/* Individual Logo Styling */
+.company-logo {
+  height: 40px; /* Fixes all logos to the same height */
+  width: auto;  /* Lets width adjust naturally */
+  object-fit: contain;
+  
+  /* THE MAGIC TRICK: Makes colorful logos look grey */
+  filter: grayscale(100%); 
+  opacity: 0.6; /* Makes them slightly faded/muted */
+  
+  transition: all 0.3s ease; /* Smooth animation */
+}
+
+/* Optional: Make them colorful on hover */
+.company-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .logos-container {
+    justify-content: center; /* Center logos on phones */
+    gap: 40px;
+  }
+  
+  .company-logo {
+    height: 30px; /* Smaller logos on mobile */
+  }
+}
+
+.badge { font-size: 12px; color: gray; }
+.white-box h3 { margin: 5px 0; font-size: 16px; }
+.arrow { text-align: right; font-weight: bold; }
+
+.title { font-weight: bold; margin-bottom: 5px; }
+.author { color: gray; font-size: 12px; margin-bottom: 5px; }
+.rating { color: #b4690e; font-weight: bold; font-size: 14px; }
+.price { font-weight: bold; margin-top: 5px; }
